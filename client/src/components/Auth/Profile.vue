@@ -1,5 +1,5 @@
 <template>
-    <div class="content">
+    <div class="container">
         <h1 class="title">
             Profile
         </h1>

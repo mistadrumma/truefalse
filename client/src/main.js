@@ -3,15 +3,20 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import Buefy from 'buefy'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faCoffee } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
-library.add(faCoffee)
-
-Vue.component('font-awesome-icon', FontAwesomeIcon)
+import ApolloClient from 'apollo-boost';
+import VueApollo from 'vue-apollo';
 
 
+Vue.use(VueApollo);
+
+//Setup ApolloClient
+const defaultClient = new ApolloClient({
+  uri: 'http://localhost:4000/gql',
+
+})
+
+const apolloProvider= new VueApollo({ defaultClient });
 
 
 
@@ -22,6 +27,7 @@ Vue.use(Buefy, {
 Vue.config.productionTip = false
 
 new Vue({
+  provide: apolloProvider.provide(),
   router,
   store,
   render: h => h(App)

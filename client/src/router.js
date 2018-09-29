@@ -4,11 +4,9 @@ import Home from "./components/Home.vue";
 import AddPost from "./components/Posts/AddPost.vue";
 import Posts from "./components/Posts/Posts.vue";
 
-import Profile from "./components/Auth/Profile.vue"
-import SignIn from "./components/Auth/SignIn.vue"
-import SignUp from "./components/Auth/SignUp.vue"
-
-
+import Profile from "./components/Auth/Profile.vue";
+import SignIn from "./components/Auth/SignIn.vue";
+import SignUp from "./components/Auth/SignUp.vue";
 
 Vue.use(Router);
 
@@ -45,6 +43,6 @@ export default new Router({
       path: "/profile",
       name: "Profile",
       component: Profile
-    },
+    }
   ]
 });
